@@ -24,6 +24,7 @@ class janscalckernel(Kernel):
             else:
                 solution = calcwrapper.run_command(code)
                 solution = solution.strip()
+                solution = solution.replace(";","")
             stream_content = {'name': 'stdout', 'text': solution}
             self.send_response(self.iopub_socket, 'stream', stream_content)
 
