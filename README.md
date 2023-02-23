@@ -6,7 +6,7 @@ A simple and robust jupyter kernel implementation of [calc](http://www.isthe.com
 This was a follow-up to a previous kernel (for bc) I made where I ran into some problems with pexpect.
 Realised with the IPython Kernel subclass and pexpect REPLWrapper.
 
-## Installation
+## Dev Installation
 
 - install calc from your distro's package manager
 - `pip install` jupyterlab and pexpect
