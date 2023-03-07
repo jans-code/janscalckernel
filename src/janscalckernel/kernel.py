@@ -20,7 +20,7 @@ class janscalckernel(Kernel):
                    allow_stdin=False):
         if not silent:            
             if ("quit" in code) or ("exit" in code) or ("help" in code):
-                solution = f'"{code}" is now allowed in the calc kernel'
+                solution = f'"{code}" is not allowed in the calc kernel'
             else:
                 solution = calcwrapper.run_command(code)
                 solution = solution.strip()
