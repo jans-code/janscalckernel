@@ -2,6 +2,8 @@
 from ipykernel.kernelbase import Kernel
 from pexpect import replwrap
 
+notallowed = ["quit", "exit", "help", "man"]
+
 calcwrapper = replwrap.REPLWrapper("calc -d", "; ", None)
 
 class janscalckernel(Kernel):
@@ -19,7 +21,7 @@ class janscalckernel(Kernel):
     def do_execute(self, code, silent, store_history=True, user_expressions=None,
                    allow_stdin=False):
         if not silent:            
-            if ("quit" in code) or ("exit" in code) or ("help" in code):
+            if code in notallowed:
                 solution = f'"{code}" is not allowed in the calc kernel'
             else:
                 solution = calcwrapper.run_command(code)
