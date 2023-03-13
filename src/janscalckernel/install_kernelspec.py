@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 import os, shutil
 from jupyter_client.kernelspec import KernelSpecManager
 json = """{"argv":["python","-m","janscalckernel", "-f", "{connection_file}"], "display_name":"calc"}"""
