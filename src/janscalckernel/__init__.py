@@ -1,2 +1,6 @@
 #!/usr/bin/env python
-__version__ = "1.0.1"
+# *_* coding: utf-8 *_*
+
+"""calc kernel init"""
+
+__version__ = "1.0.2"

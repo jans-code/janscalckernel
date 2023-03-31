@@ -1,4 +1,8 @@
 #!/usr/bin/env python
+# *_* coding: utf-8 *_*
+
+"""calc kernel module"""
+
 from ipykernel.kernelbase import Kernel
 from pexpect import replwrap
 
@@ -7,8 +11,9 @@ notallowed = ["quit", "exit", "help", "man"]
 calcwrapper = replwrap.REPLWrapper("calc -d", "; ", None)
 
 class janscalckernel(Kernel):
+    """calc kernel class hooks into the calc repl via ipykernel"""
     implementation = 'IPython'
-    implementation_version = '8.10.0'
+    implementation_version = '8.12.0'
     language = 'calc'
     language_version = '2.14.1.0'
     language_info = {
@@ -20,7 +25,7 @@ class janscalckernel(Kernel):
 
     def do_execute(self, code, silent, store_history=True, user_expressions=None,
                    allow_stdin=False):
-        if not silent:            
+        if not silent:
             if code in notallowed:
                 solution = f'"{code}" is not allowed in the calc kernel'
             else:
