@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # *_* coding: utf-8 *_*
 
-"""calc kernel init"""
+"""Init module"""
 
-__version__ = "1.0.2"
+from importlib.metadata import version
+__version__ = version(__package__)
