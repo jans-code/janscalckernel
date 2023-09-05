@@ -4,7 +4,9 @@
 """calc kernel module"""
 
 from ipykernel.kernelbase import Kernel
-from pexpect import replwrap
+from pexpect import replwrap, run
+
+version = run('calc -v').decode('utf-8')
 
 notallowed = ["quit", "exit", "help", "man"]
 
@@ -21,7 +23,7 @@ class janscalckernel(Kernel):
         'mimetype': 'text/plain',
         'file_extension': '.txt',
     }
-    banner = "calc'ing for you since 1984..."
+    banner = version
 
     def do_execute(self, code, silent, store_history=True, user_expressions=None,
                    allow_stdin=False):
